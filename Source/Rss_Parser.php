@@ -76,11 +76,11 @@ class Rss_Parser {
 	 * @return Rss_Item
 	 */
 	protected function parseItem(DOMNode $item){
-		$item = new Rss_Item();
-		$item->setTitle(		$item->getElementsByTagName("title")->item(0)->firstChild->data)
+		$rss_item = new Rss_Item();
+		$rss_item->setTitle(		$item->getElementsByTagName("title")->item(0)->firstChild->data)
 			->setLink(			$item->getElementsByTagName("link")->item(0)->firstChild->data)
 			->setDescription(	$item->getElementsByTagName("description")->item(0)->firstChild->data);
 
-		return $item;
+		return $rss_item;
 	}
 }
